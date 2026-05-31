@@ -11,7 +11,8 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <a class="nav-logo" href="index.html">🎓 Studenta Nedēļa</a>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger" aria-label="Atvērt izvēlni" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Sākums</a></li>
       <li><a href="universitate.html" class="active">Universitāte</a></li>
       <li><a href="darbs.html">Darbs</a></li>
@@ -46,16 +47,15 @@
           <div class="lecture-list">
             <div class="lecture">
               <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-name">Dabas zinātnes</div>
             </div>
             <div class="lecture">
               <div class="lecture-time">10:30 – 12:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-name">Dabas zinātnes</div>
             </div>
             <div class="lecture">
               <div class="lecture-time">12:30 – 14:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
-              <span class="tag-remote">📡 Attālināti</span>
+              <div class="lecture-name">Oracle projektēšanas rīki</div>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
           <div class="lecture-list">
             <div class="lecture">
               <div class="lecture-time">14:30 – 16:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-name">Algoritmu teorija</div>
             </div>
           </div>
         </div>
@@ -77,17 +77,17 @@
           <div class="lecture-list">
             <div class="lecture">
               <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-name">Tīmekļa dizaina pamati</div>
+              <span class="tag-hybrid">🔀 Hibrīds</span>
             </div>
             <div class="lecture">
               <div class="lecture-time">16:30 – 18:00</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-name">Bērnu veselības aizsardzība</div>
               <span class="tag-remote">📡 Attālināti</span>
             </div>
             <div class="lecture">
               <div class="lecture-time">18:30 – 20:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
-              <span class="tag-remote">📡 Attālināti</span>
+              <div class="lecture-name">Tīmekļa dizaina pamati</div>
             </div>
           </div>
         </div>
@@ -96,16 +96,13 @@
           <div class="day-header">📆 Ceturtdiena</div>
           <div class="lecture-list">
             <div class="lecture">
-              <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-time">16:30 – 18:10</div>
+              <div class="lecture-name">Objektorientētā programmēšana</div>
+              <span class="tag-remote">📡 Attālināti</span>
             </div>
             <div class="lecture">
-              <div class="lecture-time">10:30 – 12:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">12:30 – 14:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-time">18:30 – 20:10</div>
+              <div class="lecture-name">Objektorientētā programmēšana</div>
               <span class="tag-remote">📡 Attālināti</span>
             </div>
           </div>
@@ -116,15 +113,12 @@
           <div class="lecture-list">
             <div class="lecture">
               <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-name">Sports I</div>
+              <span class="tag-hybrid">🔀 Hibrīds</span>
             </div>
             <div class="lecture">
-              <div class="lecture-time">10:30 – 12:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">12:30 – 14:10</div>
-              <div class="lecture-name">[Lekcijas nosaukums]</div>
+              <div class="lecture-time">14:00 – 16:00</div>
+              <div class="lecture-name">Specseminārs</div>
               <span class="tag-remote">📡 Attālināti</span>
             </div>
           </div>
@@ -135,7 +129,7 @@
       </div>
 
       <div class="highlight-box" style="margin-top: 1.5rem;">
-        <p>💡 <strong>Padoms:</strong> Attālinātās lekcijas notiek caur MS Teams vai Zoom. Ieteicams sagatavoties iepriekš — pārbaudīt interneta savienojumu un austiņas.</p>
+        <p>💡 <strong>Padoms:</strong> Attālināto lekciju laikā, var arī paralēli strādāt. <strong>Bet atceries arī klausīties lekciju, lai nav tā, ka kaut ko palaid garām!</strong></p>
       </div>
     </section>
 
@@ -149,13 +143,13 @@
         <div class="content-text">
           <h2>Rīts pirms lekcijām</h2>
           <p>
-            Pirmdienās, kad pirmā lekcija sākas jau 8:30, modinātājs zvana ap 7:00. Šajā laikā ir jābūt ātram — ātras brokastis, kafija termiņkrūzē, un ceļš uz universitāti vai darbavirsma mājās, ja lekcija ir attālināta. Pirmās rīta lekcijas prasa koncentrāciju, kas ne vienmēr ir viegli agri no rīta.
+            Pirmdienās, kad pirmā lekcija sākas jau 8:30, modinātājs zvana ap 7:00. Šajā laikā ir jābūt ātram — ātras brokastis, kafija termiņkrūzē, un ceļš uz universitāti. Pirmās rīta lekcijas prasa koncentrāciju, kas ne vienmēr ir viegli agri no rīta.
           </p>
           <p>
-            Parasti pirms došanās uz universitāti tiek pārbaudīts e-pasts un studiju portāls — vai nav jaunu paziņojumu, uzdevumu vai izmaiņu grafikā. Datorikas nodaļā izmaiņas var notikt ātri, tāpēc ir svarīgi sekot līdzi aktuālajai informācijai. Dators un piezīmju grāmatiņa ir galvenie studiju instrumenti.
+            Parasti ierodoties universitātē, pirmās lekcijas laikā, tiek pārbaudīts e-pasts un studiju portāls — vai nav jaunu paziņojumu, uzdevumu vai izmaiņu grafikā. Datorikas nodaļā izmaiņas var notikt ātri, tāpēc ir svarīgi sekot līdzi aktuālajai informācijai. Dators un piezīmju aplikācija ir galvenie studiju instrumenti.
           </p>
           <p>
-            Ceļš uz universitāti aizņem aptuveni 20–30 minūtes ar sabiedrisko transportu. Šis laiks tiek izmantots, lai vēlreiz palasītu iepriekšējās lekcijas piezīmes vai vienkārši paklausītos mūziku pirms garās dienas.
+            Ceļš uz universitāti aizņem aptuveni 20–30 minūtes ar sabiedrisko transportu. Šis laiks tiek izmantots, lai kārtīgāk pamostos un apkopotu savas domas pirms lekcijas.
           </p>
         </div>
         <div class="content-img" id="img-rits">
@@ -170,10 +164,10 @@
         <div class="content-text">
           <h2>Lekciju zālē</h2>
           <p>
-            Datorikas nodaļas lekcijas notiek modernu auditorijās, kas aprīkotas ar projektoriem un tāfelēm. Lielākā daļa pasniedzēju izmanto prezentācijas, kas ir pieejamas studentu portālā pēc lekcijām. Tas nozīmē, ka nav jāpārraksta katrs slaids — var koncentrēties uz saprašanu un svarīgāko punktu atzīmēšanu.
+            Datorikas nodaļas lekcijas notiek universitātes auditorijās, kas aprīkotas ar projektoriem un tāfelēm. Lielākā daļa pasniedzēju izmanto prezentācijas, kas ir pieejamas studentu portālā pēc lekcijām. Tas nozīmē, ka nav jāpārraksta katrs slaids — var koncentrēties uz saprašanu un svarīgāko punktu atzīmēšanu.
           </p>
           <p>
-            Pirmdienā, kad ir trīs lekcijas pēc kārtas, ir svarīgi pareizi organizēt pauzes. Starp 8:30–10:10 un 10:30–12:10 ir 20 minūšu pauze, kas tiek izmantota, lai izstieptos, paēstu kaut ko vai vienkārši atpūstos no ekrāna. Datorikas studenti bieži šo laiku izmanto arī, lai pārrunātu uzdevumus vai grupas darbus.
+            Pirmdienā, kad ir trīs lekcijas pēc kārtas, ir svarīgi pareizi organizēt pauzes. Starp 8:30–10:10 un 10:30–12:10 ir 20 minūšu pauze, kas tiek izmantota, lai izstieptos, paēstu kaut ko un uzspēlētu galda tenisu. Bieži šo laiku izmantoju arī, lai pārrunātu uzdevumus vai grupas darbus.
           </p>
           <p>
             Klātienē ir iespēja uzdot jautājumus tieši pasniedzējam un saņemt tūlītēju atbildi, kas ir lielākā priekšrocība salīdzinājumā ar attālinātajām lekcijām.
@@ -191,7 +185,7 @@
         <div class="content-text">
           <h2>Attālinātās lekcijas</h2>
           <p>
-            Trešdienas vakara lekcijas (16:30–18:00 un 18:30–20:10) notiek attālināti. Šīs lekcijas prasa citu pieeju — ir jānodrošina mierīga vieta ar labu interneta pieslēgumu. Mājās tas nozīmē viesistabas vai guļamistabas pārvēršanu par mini klasi ar austiņām un ieslēgtu kameru.
+            Liela daļa lekciju notiek attālināti. Šīs lekcijas prasa citu pieeju — ir jānodrošina mierīga vieta ar labu interneta pieslēgumu. Mājās tas nozīmē viesistabas vai guļamistabas pārvēršanu par mini klasi.
           </p>
           <p>
             Attālinātajās lekcijās ir arī savas priekšrocības — nav jātērē laiks ceļošanai, var ērti sēdēt savā krēslā un pat pagatavot siltu tēju vai kafiju. Tomēr koncentrēšanās var būt grūtāka, jo apkārtēja mājas vide nav tik "akadēmiska" kā universitātes auditorija.

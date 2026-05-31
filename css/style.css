@@ -115,6 +115,31 @@ a:hover { text-decoration: underline; }
 }
 .theme-toggle:hover { border-color: var(--accent); }
 
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
@@ -132,8 +157,9 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 45%;
   border-radius: 0;
-  opacity: 0.35;
+  opacity: 0.55;
 }
 
 .hero-overlay {
@@ -388,6 +414,24 @@ section + section { border-top: 1px solid var(--border); }
   letter-spacing: 0.04em;
 }
 
+.tag-hybrid {
+  display: inline-block;
+  margin-top: 0.4rem;
+  background: #d0f0e8;
+  color: #0a6b4a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+[data-theme="dark"] .tag-hybrid {
+  background: #0d3d2a;
+  color: #4ecca3;
+}
+
 /* ===== CONTENT SECTIONS (subpages) ===== */
 .content-section {
   display: grid;
@@ -542,9 +586,27 @@ footer strong { color: var(--text); }
 }
 
 @media (max-width: 640px) {
-  .navbar { padding: 0.6rem 1rem; }
-  .nav-links { gap: 0.75rem; }
-  .nav-links a { font-size: 0.85rem; padding: 0.25rem 0.4rem; }
+  .navbar { padding: 0.6rem 1rem; flex-wrap: wrap; }
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+    gap: 0.25rem;
+    padding: 0.5rem 0 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    display: block;
+  }
+
   .hero-content h1 { font-size: 1.8rem; }
   .day-card { grid-template-columns: 1fr; }
   .day-header { flex-direction: row; justify-content: flex-start; min-height: auto; padding: 0.9rem 1.25rem; }
