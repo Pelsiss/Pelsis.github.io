@@ -316,9 +316,9 @@ section + section { border-top: 1px solid var(--border); }
 
 /* ===== SCHEDULE ===== */
 .schedule-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -328,27 +328,35 @@ section + section { border-top: 1px solid var(--border); }
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 12px var(--shadow);
+  display: grid;
+  grid-template-columns: 160px 1fr;
 }
 
 .day-header {
   background: var(--accent);
   color: #fff;
-  padding: 0.9rem 1.25rem;
+  padding: 1.25rem 1.25rem;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  text-align: center;
+  gap: 0.4rem;
+  flex-direction: column;
+  min-height: 80px;
 }
 
-.lecture-list { padding: 0.75rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.lecture-list { padding: 0.85rem 1.25rem; display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.75rem; align-items: flex-start; }
 
 .lecture {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1rem;
   position: relative;
+  min-width: 170px;
+  flex: 0 0 auto;
 }
 
 .lecture-time {
@@ -538,7 +546,8 @@ footer strong { color: var(--text); }
   .nav-links { gap: 0.75rem; }
   .nav-links a { font-size: 0.85rem; padding: 0.25rem 0.4rem; }
   .hero-content h1 { font-size: 1.8rem; }
-  .schedule-grid { grid-template-columns: 1fr; }
+  .day-card { grid-template-columns: 1fr; }
+  .day-header { flex-direction: row; justify-content: flex-start; min-height: auto; padding: 0.9rem 1.25rem; }
   .card-grid { grid-template-columns: 1fr; }
   section { padding: 2.5rem 0; }
   .page-header { padding: 2.5rem 1.5rem 2rem; }
