@@ -65,10 +65,35 @@
             Papildus kodēšanai liela daļa laika aiziet dokumentācijas rakstīšanā, sanāksmēs un projektu plānošanā. Komunikācija komandā notiek caur Teams un regulārām video zvanu sanāksmēm.
           </p>
         </div>
-        <div class="content-img">
-          <!-- Nomainiet ar: <img src="images/kods.jpg" alt="Programmēšana" /> -->
-          <span>⌨️</span>
-          <span class="img-label">Pievienojiet savu foto</span>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-lang">TypeScript</span>
+          </div>
+          <pre class="code-body"><code><span class="c-kw">async function</span> <span class="c-fn">fetchUserData</span>(<span class="c-param">userId</span>: <span class="c-type">string</span>): <span class="c-type">Promise</span>&lt;<span class="c-type">User</span>&gt; {
+  <span class="c-kw">const</span> cached = <span class="c-kw">await</span> redis.<span class="c-fn">get</span>(<span class="c-str">`user:</span><span class="c-tmpl">${userId}</span><span class="c-str">`</span>);
+  <span class="c-kw">if</span> (cached) <span class="c-kw">return</span> <span class="c-type">JSON</span>.<span class="c-fn">parse</span>(cached);
+
+  <span class="c-kw">const</span> user = <span class="c-kw">await</span> db.users.<span class="c-fn">findUnique</span>({
+    where: { id: userId },
+    include: {
+      profile: <span class="c-bool">true</span>,
+      roles: { select: { name: <span class="c-bool">true</span> } },
+    },
+  });
+
+  <span class="c-kw">if</span> (!user) <span class="c-kw">throw new</span> <span class="c-fn">NotFoundError</span>(<span class="c-str">"User not found"</span>);
+
+  <span class="c-kw">await</span> redis.<span class="c-fn">setex</span>(
+    <span class="c-str">`user:</span><span class="c-tmpl">${userId}</span><span class="c-str">`</span>,
+    <span class="c-num">300</span>,
+    <span class="c-type">JSON</span>.<span class="c-fn">stringify</span>(user)
+  );
+
+  <span class="c-kw">return</span> user;
+}</code></pre>
         </div>
       </div>
 
@@ -88,8 +113,7 @@
         </div>
         <div class="content-img">
           <!-- Nomainiet ar: <img src="images/birojs.jpg" alt="Diena birojā" /> -->
-          <span>🏢</span>
-          <span class="img-label">Pievienojiet savu foto</span>
+          <img src="images/birojs.jpeg" alt="Darbs birojā" class="office" />
         </div>
       </div>
 
@@ -109,29 +133,7 @@
         </div>
         <div class="content-img">
           <!-- Nomainiet ar: <img src="images/homeoffice.jpg" alt="Attālinātais darbs" /> -->
-          <span>🏠</span>
-          <span class="img-label">Pievienojiet savu foto</span>
-        </div>
-      </div>
-
-      <!-- SEKCIJA 4: Studijas + darbs -->
-      <div class="content-section reverse">
-        <div class="content-text">
-          <h2>Studijas un darbs vienlaikus</h2>
-          <p>
-            Vienlaicīgas studijas un darbs IT jomā ir izaicinājums, kas prasa labu laika plānošanu. Universitātes uzdevumi, kursa darbi un eksāmeni jāapvieno ar darba projektiem un termiņiem. Uz papīra tas izskatās grūti, bet praksē daudzas studijās apgūtās lietas tieši sakrīt ar darba uzdevumiem.
-          </p>
-          <p>
-            Piemēram, datu bāzu lekcijā apgūtās SQL zināšanas tiek lietotas tieši nākamajā dienā, rakstot darba vaicājumus. Algoritmu un datu struktūru kurss palīdz optimizēt kodu darba projektos. Šī sinerģija padara studijas vērtīgākas un darbu interesantāku.
-          </p>
-          <p>
-            Svarīgākais padoms: nekautrēties lūgt palīdzību — gan no kolēģiem darbā, gan no pasniedzējiem universitātē. IT kopiena ir ļoti atvērta un labprāt dalās zināšanās.
-          </p>
-        </div>
-        <div class="content-img">
-          <!-- Nomainiet ar: <img src="images/studijas_darbs.jpg" alt="Studijas un darbs" /> -->
-          <span>⚖️</span>
-          <span class="img-label">Pievienojiet savu foto</span>
+          <img src="images/toby-work.png" alt="Darbs no mājām" class="toby-work" />
         </div>
       </div>
 

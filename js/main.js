@@ -34,6 +34,20 @@
       if (link.href === window.location.href) link.classList.add('active');
     });
 
+    // Week schedule tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    if (tabBtns.length) {
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+        });
+      });
+    }
+
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');

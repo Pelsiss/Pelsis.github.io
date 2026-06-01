@@ -37,99 +37,155 @@
     <!-- SCHEDULE SECTION -->
     <section>
       <h2 class="section-title">📅 Nedēļas lekciju grafiks</h2>
-      <p class="section-subtitle">Lekciju laiki pirmdienā, otrdienā un trešdienā. Lauki ar <em>kursīvu</em> ir vietas lekciju nosaukumiem.</p>
+      <p class="section-subtitle">Izvēlies dienu, lai redzētu lekciju grafiku</p>
 
-      <div class="schedule-grid">
+      <div class="week-tabs">
 
-        <!-- PIRMDIENA -->
-        <div class="day-card">
-          <div class="day-header">📆 Pirmdiena</div>
-          <div class="lecture-list">
-            <div class="lecture">
-              <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">Dabas zinātnes</div>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">10:30 – 12:10</div>
-              <div class="lecture-name">Dabas zinātnes</div>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">12:30 – 14:10</div>
-              <div class="lecture-name">Oracle projektēšanas rīki</div>
-            </div>
-          </div>
+        <!-- TAB POGAS -->
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn active" data-tab="pirmdiena" role="tab" aria-selected="true">
+            <span class="tab-day">Pirmdiena</span>
+            <span class="tab-badge">3</span>
+          </button>
+          <button class="tab-btn" data-tab="otrdiena" role="tab" aria-selected="false">
+            <span class="tab-day">Otrdiena</span>
+            <span class="tab-badge">1</span>
+          </button>
+          <button class="tab-btn" data-tab="tresddiena" role="tab" aria-selected="false">
+            <span class="tab-day">Trešdiena</span>
+            <span class="tab-badge">3</span>
+          </button>
+          <button class="tab-btn" data-tab="ceturtdiena" role="tab" aria-selected="false">
+            <span class="tab-day">Ceturtdiena</span>
+            <span class="tab-badge">2</span>
+          </button>
+          <button class="tab-btn" data-tab="piektdiena" role="tab" aria-selected="false">
+            <span class="tab-day">Piektdiena</span>
+            <span class="tab-badge">2</span>
+          </button>
         </div>
 
-        <!-- OTRDIENA -->
-        <div class="day-card">
-          <div class="day-header">📆 Otrdiena</div>
-          <div class="lecture-list">
-            <div class="lecture">
-              <div class="lecture-time">14:30 – 16:10</div>
-              <div class="lecture-name">Algoritmu teorija</div>
+        <!-- TAB PANEĻI -->
+        <div class="tab-panels">
+
+          <!-- PIRMDIENA -->
+          <div class="tab-panel active" id="tab-pirmdiena">
+            <div class="tab-lecture-list">
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">1</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">08:30 – 10:10</div>
+                  <div class="lecture-name">Dabas zinātnes</div>
+                </div>
+              </div>
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">2</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">10:30 – 12:10</div>
+                  <div class="lecture-name">Dabas zinātnes</div>
+                </div>
+              </div>
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">3</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">12:30 – 14:10</div>
+                  <div class="lecture-name">Oracle projektēšanas rīki</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- TREŠDIENA -->
-        <div class="day-card">
-          <div class="day-header">📆 Trešdiena</div>
-          <div class="lecture-list">
-            <div class="lecture">
-              <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">Tīmekļa dizaina pamati</div>
-              <span class="tag-hybrid">🔀 Hibrīds</span>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">16:30 – 18:00</div>
-              <div class="lecture-name">Bērnu veselības aizsardzība</div>
-              <span class="tag-remote">📡 Attālināti</span>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">18:30 – 20:10</div>
-              <div class="lecture-name">Tīmekļa dizaina pamati</div>
+          <!-- OTRDIENA -->
+          <div class="tab-panel" id="tab-otrdiena">
+            <div class="tab-lecture-list">
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">1</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">14:30 – 16:10</div>
+                  <div class="lecture-name">Algoritmu teorija</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="day-card">
-          <div class="day-header">📆 Ceturtdiena</div>
-          <div class="lecture-list">
-            <div class="lecture">
-              <div class="lecture-time">16:30 – 18:10</div>
-              <div class="lecture-name">Objektorientētā programmēšana</div>
-              <span class="tag-remote">📡 Attālināti</span>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">18:30 – 20:10</div>
-              <div class="lecture-name">Objektorientētā programmēšana</div>
-              <span class="tag-remote">📡 Attālināti</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header">📆 Piektdiena</div>
-          <div class="lecture-list">
-            <div class="lecture">
-              <div class="lecture-time">08:30 – 10:10</div>
-              <div class="lecture-name">Sports I</div>
-              <span class="tag-hybrid">🔀 Hibrīds</span>
-            </div>
-            <div class="lecture">
-              <div class="lecture-time">14:00 – 16:00</div>
-              <div class="lecture-name">Specseminārs</div>
-              <span class="tag-remote">📡 Attālināti</span>
+          <!-- TREŠDIENA -->
+          <div class="tab-panel" id="tab-tresddiena">
+            <div class="tab-lecture-list">
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">1</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">08:30 – 10:10</div>
+                  <div class="lecture-name">Tīmekļa dizaina pamati</div>
+                  <span class="tag-hybrid">🔀 Hibrīds</span>
+                </div>
+              </div>
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">2</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">16:30 – 18:00</div>
+                  <div class="lecture-name">Bērnu veselības aizsardzība</div>
+                  <span class="tag-remote">📡 Attālināti</span>
+                </div>
+              </div>
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">3</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">18:30 – 20:10</div>
+                  <div class="lecture-name">Tīmekļa dizaina pamati</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        
+          <!-- CETURTDIENA -->
+          <div class="tab-panel" id="tab-ceturtdiena">
+            <div class="tab-lecture-list">
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">1</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">16:30 – 18:10</div>
+                  <div class="lecture-name">Objektorientētā programmēšana</div>
+                  <span class="tag-remote">📡 Attālināti</span>
+                </div>
+              </div>
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">2</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">18:30 – 20:10</div>
+                  <div class="lecture-name">Objektorientētā programmēšana</div>
+                  <span class="tag-remote">📡 Attālināti</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      </div>
+          <!-- PIEKTDIENA -->
+          <div class="tab-panel" id="tab-piektdiena">
+            <div class="tab-lecture-list">
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">1</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">08:30 – 10:10</div>
+                  <div class="lecture-name">Sports I</div>
+                  <span class="tag-hybrid">🔀 Hibrīds</span>
+                </div>
+              </div>
+              <div class="tab-lecture">
+                <div class="tab-lecture-num">2</div>
+                <div class="tab-lecture-info">
+                  <div class="lecture-time">14:00 – 16:00</div>
+                  <div class="lecture-name">Specseminārs</div>
+                  <span class="tag-remote">📡 Attālināti</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /tab-panels -->
+      </div><!-- /week-tabs -->
 
       <div class="highlight-box" style="margin-top: 1.5rem;">
-        <p>💡 <strong>Padoms:</strong> Attālināto lekciju laikā, var arī paralēli strādāt. <strong>Bet atceries arī klausīties lekciju, lai nav tā, ka kaut ko palaid garām!</strong></p>
+        <p>💡 <strong>Padoms:</strong> Attālināto lekciju laikā var arī paralēli strādāt. <strong>Bet atceries arī klausīties lekciju, lai nav tā, ka kaut ko palaid garām!</strong></p>
       </div>
     </section>
 
@@ -175,8 +231,7 @@
         </div>
         <div class="content-img">
           <!-- Nomainiet ar: <img src="images/lekcija.jpg" alt="Lekciju zālē" /> -->
-          <span>🏫</span>
-          <span class="img-label">Pievienojiet savu foto</span>
+          <img src="images/lekcijas.jpeg" alt="Universitāte" class="university" />
         </div>
       </div>
 
@@ -196,8 +251,7 @@
         </div>
         <div class="content-img">
           <!-- Nomainiet ar: <img src="images/attalinati.jpg" alt="Attālinātā lekcija" /> -->
-          <span>💻</span>
-          <span class="img-label">Pievienojiet savu foto</span>
+          <img src="images/attalinata-lekcija.jpeg" alt="Universitāte no mājām" class="uni-from-home" />
         </div>
       </div>
 
