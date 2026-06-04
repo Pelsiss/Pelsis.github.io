@@ -34,6 +34,7 @@
       if (link.href === window.location.href) link.classList.add('active');
     });
 
+
     // Week schedule tabs
     const tabBtns = document.querySelectorAll('.tab-btn');
     if (tabBtns.length) {
